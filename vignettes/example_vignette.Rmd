@@ -1,0 +1,38 @@
+---
+title: "gest_fit Example Vignette"
+author: '---'
+date: "28/07/2020"
+output: html_document
+---
+
+`gest_fit` allows you to fit 
+
+
+```{r}
+library(gest_fit)
+library(tidyverse)
+```
+
+
+```{r}
+source("analysis/load_data_gstage.R")
+```
+
+
+```{r}
+fitgbm <- gest_fit(xtrain, ytrain, gaptrain, idtrain, method = "gbm")
+
+predy_gbm <- predict(fitgbm, xval, gapval, idval)
+
+predy_gbm_aligned <- alignment_response(predy_gbm, gapval, idval)
+```
+
+```{r}
+fitpc <- gest_fit(xtrain, ytrain, gaptrain, idtrain, method = "pcurve")
+
+predy_pc <- predict(fitpc, xval, gapval, idval)
+
+predy_pc_aligned <- alignment_response(predy_pc, gapval, idval)
+
+
+```

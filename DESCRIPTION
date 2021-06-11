@@ -1,0 +1,23 @@
+Package: gestfit
+Type: Package
+Title: Supervised Learning Models for predicting Gestational Age
+Version: 20200728-062000
+Author: R Samyak, Robert Tibshirani, Trevor Hastie
+Maintainer: Robert Tibshirani <tibs@stanford.edu>
+Description: Fit supervised learning models to gestational data
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Depends:
+	R(>= 3.6.1),
+	tidyverse
+Imports:
+	glmnet(>= 3.0.0),
+	Matrix,
+	splines,
+	tidyverse
+Suggests:
+	knitr,
+	rmarkdown
+VignetteBuilder: knitr
+RoxygenNote: 7.1.0
